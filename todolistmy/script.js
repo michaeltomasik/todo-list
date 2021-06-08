@@ -82,7 +82,6 @@ for (let i = 0; i < nodeListLi.length; i++) {
 }
 
 // Click on a close button to hide the current list item
-
 let close = document.getElementsByClassName('close');
 for (let i = 0; i < close.length; i++) {
   close[i].onclick = function () {
