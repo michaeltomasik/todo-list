@@ -11,3 +11,33 @@ body {
   margin: 20px;
   font-size: 152.5%;
 }
+/* Set all odd list items to a different color (zebra-stripes) */
+ul li:nth-child(odd) {
+  background: #f9f9f9;
+  width: 350px;
+}
+
+ul li.done {
+  text-decoration: line-through;
+  list-style-type: none;
+}
+
+ul li {
+  cursor: pointer;
+  background: #eee;
+  padding: 6px 20px;
+  position: relative;
+  padding: 10px 45px 0 0;
+}
+
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 5px 10px 5px 10px;
+}
+
+.close:hover {
+  background-color: #f57168;
+  color: white;
+}
