@@ -24,3 +24,14 @@ h3 {
   text-transform: none;
   letter-spacing: 0.01em;
 }
+
+#random-color {
+  border-radius: 8px;
+  border: none;
+  padding: 8px;
+  font-weight: bold;
+}
+
+#random-color:hover {
+  background-color: rgb(146, 196, 253);
+}
