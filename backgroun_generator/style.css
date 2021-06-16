@@ -8,6 +8,11 @@ body {
   background: linear-gradient(to right, red, yellow); /* Standard syntax */
 }
 
+.container {
+  display: flex;
+  justify-content: center;
+}
+
 h1 {
   font: 600 3.5em 'Raleway', sans-serif;
   color: rgba(0, 0, 0, 0.5);
@@ -17,21 +22,34 @@ h1 {
   width: 100%;
 }
 
+h2 {
+  font-size: 2.5rem;
+  margin-top: 4rem;
+}
+
 h3 {
-  font: 900 1em 'Raleway', sans-serif;
+  font: 900 1.5em 'Raleway', sans-serif;
   color: rgba(0, 0, 0, 0.5);
   text-align: center;
   text-transform: none;
   letter-spacing: 0.01em;
 }
 
+input {
+  width: 100px;
+  height: 50px;
+  margin: 0 20px;
+}
+
 #random-color {
   border-radius: 8px;
   border: none;
-  padding: 8px;
+  padding: 14px;
   font-weight: bold;
+  font-size: 1.5rem;
+  margin-left: 20px;
 }
 
 #random-color:hover {
-  background-color: rgb(146, 196, 253);
+  background-color: rgb(187, 216, 248);
 }

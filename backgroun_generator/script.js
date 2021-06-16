@@ -18,14 +18,21 @@ color1.addEventListener('input', setGradient);
 color2.addEventListener('input', setGradient);
 
 //////////////////////////////////////////////////////
-// 2) Display random linear gradient on page load
+// Display random linear gradient
 const init = function () {
   color1.value = getRandomColor();
   color2.value = getRandomColor();
   setGradient();
 };
 
+// GET RANDOM LINEAR GRADIENT ON PAGE LOAD
 window.onload = init();
+
+///////////////////////
+// 1)
+
+//////////////////////
+// 2)
 
 /////////////////////////////////////////////////////
 // 3) Add a random button which generates two random numbers for the colour inputs.
@@ -38,7 +45,9 @@ function getRandomColor() {
   return color;
 }
 
-randomColorBtn.addEventListener('click', () => {});
+randomColorBtn.addEventListener('click', () => {
+  init();
+});
 
 /*
 ---------------------------------------------------------------------
