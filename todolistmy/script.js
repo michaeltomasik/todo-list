@@ -3,12 +3,37 @@ const input = document.getElementById('userinput');
 const list = document.querySelector('ul');
 const nodeListLi = document.getElementsByTagName('LI');
 
-// Functions
+//////////////////////////////
+// FUNCTIONS
 
 // Check for valid input
 function inputLenght() {
   return input.value.length;
 }
+
+// Add buttons next to each list item to delete the item
+const createButton = function () {
+  for (let i = 0; i < nodeListLi.length; i++) {
+    let span = document.createElement('SPAN');
+    let txt = document.createTextNode('\u00D7');
+    span.className = 'close'; // <span class="close">\u00D7</span>
+    span.appendChild(txt);
+    nodeListLi[i].appendChild(span);
+  }
+  return;
+};
+
+// Click on a close button to hide the current list item
+const closeItem = function () {
+  let close = document.getElementsByClassName('close');
+  for (let i = 0; i < close.length; i++) {
+    close[i].onclick = function () {
+      let div = this.parentElement;
+      div.style.display = 'none';
+    };
+  }
+  return;
+};
 
 // Create the element (item + close button + close button functionality)
 function createListElement() {
@@ -18,30 +43,19 @@ function createListElement() {
   list.appendChild(li); // append (put) into the page
   input.value = ''; // clear the input field again
 
-  // Create close button
-  var span = document.createElement('SPAN');
-  var txt = document.createTextNode('\u00D7');
-  span.className = 'close';
-  span.appendChild(txt);
-  li.appendChild(span);
+  createButton();
 
-  // Close the item by click on close button
-  for (i = 0; i < close.length; i++) {
-    close[i].onclick = function () {
-      var div = this.parentElement;
-      div.style.display = 'none';
-    };
-  }
+  closeItem();
 }
 
-// Add element after click the button
+// Add element after 'click' the button
 function addListAfterClick() {
   if (inputLenght() > 0) {
     createListElement();
   }
 }
 
-// Add element after "enter" is pressed
+// Add element after "enter" keypress
 function addListAfterKeypress(e) {
   // console.log(e);
   //console.log(e.which); // to see the keycode of the pressed button, but a better solution is to use e.key for the key pressed
@@ -67,25 +81,12 @@ const itemChecked = function () {
 
 /////////////////////////////////////////
 // Event listener
+
 button.addEventListener('click', addListAfterClick);
 input.addEventListener('keypress', addListAfterKeypress);
 
 itemChecked();
 
-// Add buttons next to each list item to delete the item
-for (let i = 0; i < nodeListLi.length; i++) {
-  let span = document.createElement('SPAN');
-  let txt = document.createTextNode('\u00D7');
-  span.className = 'close'; // <span class="close">\u00D7</span>
-  span.appendChild(txt);
-  nodeListLi[i].appendChild(span);
-}
+createButton();
 
-// Click on a close button to hide the current list item
-let close = document.getElementsByClassName('close');
-for (let i = 0; i < close.length; i++) {
-  close[i].onclick = function () {
-    let div = this.parentElement;
-    div.style.display = 'none';
-  };
-}
+closeItem();
